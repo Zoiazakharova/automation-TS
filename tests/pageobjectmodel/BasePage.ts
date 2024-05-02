@@ -2,7 +2,12 @@ import {expect,type Page} from '@playwright/test'
 
 
 export class BasePage{
-  constructor (protected page:Page){
-
+  public page:Page
+   
+  constructor (page:Page){
+ 
+  this.page=page
+  page.waitForLoadState()
     }
+    
 }
